@@ -47,9 +47,14 @@ public class LibraryManagement {
                 	System.out.print("Enter book title: ");
                     String title = scanner.next();
                     
-                    scanner.nextLine();
-
-                    Book newBook = new Book(id, title);
+                    scanner.nextLine();     
+				Book newBook = null;
+				try {
+					newBook = new Book(id, title);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					System.out.println("Invalid ID");
+				}
                     library.addBook(newBook);
                     System.out.println("Book added to library successfully.");
                     break;
