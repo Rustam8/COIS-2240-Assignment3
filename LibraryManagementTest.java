@@ -1,6 +1,6 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
+import java.lang.reflect.Constructor;
 
 public class LibraryManagementTest {
 	
@@ -39,4 +39,10 @@ public class LibraryManagementTest {
 		
 	}
 
+	@Test
+	public void testSingletonTransaction() throws Exception {
+		Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
+		int modifier = constructor.getModifiers();
+		assertEquals(modifier, 2);
+	}
 }
