@@ -31,8 +31,9 @@ public class Book {
     }
 
     // Method to return the book
-    public void returnBook() {
+    public boolean returnBook() {
         available = true;
+        return available;
     }
 
     // Method to check if a book id is valid
